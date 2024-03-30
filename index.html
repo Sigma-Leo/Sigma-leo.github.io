@@ -44,7 +44,7 @@ body {
 
 </head>
 
-<body>
+<body onclick="playAudio()">
 
 <div class="inline-elements">
 
@@ -54,11 +54,7 @@ body {
   <script>
 	  function playAudio() {
 		  var audio = document.getElementById('myAudio');
-		  if (!audio.paused) {
-			  audio.pause();
-		  } else {
-			  audio.play();
-		  }
+		audio.play();
 	  }
   </script>
 
