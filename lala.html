@@ -68,14 +68,15 @@ body {
 <script type="text/javascript" src="js/helvetiker_regular.typeface.js"></script>
 <script type="text/javascript">
 	var audio = document.getElementById("myAudio");
+    	var playButton = document.getElementById("playButton");
 
-    	function playMusic() {
-	      	if (audio.paused) {
-	        	audio.play();
-	      	} else {
-	        	audio.pause();
-	      	}
-    	}
+    	playButton.addEventListener("click", function() {
+	      if (audio.paused) {
+	        audio.play();
+	      } else {
+	        audio.pause();
+	      }
+	});
 
 	var container;
 
