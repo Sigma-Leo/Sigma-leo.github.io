@@ -67,16 +67,17 @@ body {
 
 <script type="text/javascript" src="js/helvetiker_regular.typeface.js"></script>
 <script type="text/javascript">
-	var audio = document.getElementById("myAudio");
-    	var playButton = document.getElementById("playButton");
+	// 获取按钮元素
+	var playButton = document.getElementById('playButton');
 
-    	playButton.addEventListener("click", function() {
-	      if (audio.paused) {
-	        audio.play();
-	      } else {
-	        audio.pause();
-	      }
+// 创建音乐播放器
+	var audio = new Audio('./你是我的风景.mp3');
+
+// 点击按钮时播放音乐
+	playButton.addEventListener('click', function() {
+  		audio.play();
 	});
+
 
 	var container;
 
