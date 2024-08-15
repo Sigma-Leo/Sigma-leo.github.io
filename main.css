@@ -8561,3 +8561,22 @@ a.form-btn:hover {
         background-size: 226px 210px
     }
 }
+.QR_Code{
+    position: absolute;
+    background-image:url(./download.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    height: 150px;
+    float: left;
+    width: 150px;
+
+}
+.QR_Code:hover{
+    position: absolute;
+    background-image:url(./f9328cd235d8f898c6ea92b2aa5aa5f.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    height: 150px;
+    float: left;
+    width: 150px;
+}
