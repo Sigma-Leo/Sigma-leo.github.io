@@ -2695,7 +2695,7 @@ ol,ul {
 }
 
 .pay-area {
-    padding: 20px 70px 40px;
+    padding: 20px 0px 40px 70px;
     background-color: #fff
 }
 
@@ -5540,9 +5540,6 @@ a.form-btn:hover {
     border-color: #e5e5e5
 }
 
-.goods-items.checked .icon-corner-checked {
-    display: block
-}
 
 .goods-items.checked .icon-corner-checked.hide {
     clip: rect(1px 1px 1px 1px);
@@ -8569,7 +8566,7 @@ a.form-btn:hover {
     height: 150px;
     float: left;
     width: 150px;
-
+    margin: 10px 0px 0px -5px;
 }
 .QR_Code:hover{
     position: absolute;
@@ -8579,4 +8576,5 @@ a.form-btn:hover {
     height: 150px;
     float: left;
     width: 150px;
+    margin: 10px 0px 0px -5px;
 }
