@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href=".\main.css">
+	<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+	<map class="top_menu" id="webpay_connect">
+    <div class="menu">
+        <div class="txt_left">
+            <a target="_blank" href="//pay.qq.com/app/mobile.shtml">手机版</a>
+        </div>
+        <span class="nologin" style="display: none;">
+            <span class="STYLE1">欢迎光临！</span>
+            <a id="pay_login" href="javascript:void(0);">登录</a>
+        </span>
+        ﻿<span class="already_login" style="">
+            <span style="color:#fff">欢迎您，<input type="text" id="login_nickname" style="max-width:100px; box-shadow: none; min-width:1px;color:#fff;height: 0px; background: transparent; border: 0px" value="qq号码"/></span>&nbsp;&nbsp;
+            <a id="logout" href="javascript:void 0;">退出</a>
+        </span>
+    </div>
+    <div id="wrapper" class="wrapper">
+    <div class="header">
+        <div class="header-layer cf">
+            <h1 class="logo"><a href="//pay.qq.com/index.shtml?aid=pay.ipay.logo.home&amp;ADTAG=pay.ipay.logo.home"><img src="https://imgcache.qq.com/bossweb/pay/pay_v4/images/public/logo.png" alt="腾讯充值中心"></a></h1>
+            <div class="nav">
+                <ul>
+                    <li><a href="//pay.qq.com/index.shtml?aid=pay.ipay.header.home&amp;ADTAG=pay.ipay.header.home" title="首页">首页<i class="title_index"></i></a></li>
+                    <li stype="recharge"><a href="//pay.qq.com/ipay/index.shtml?c=qqacct_save&amp;ch=qqcard,qqwallet,weixin,kj&amp;aid=pay.ipay.header.paycenter&amp;ADTAG=pay.ipay.header.paycenter" title="账户充值">账户充值<i class="title_pay"></i></a></li>
+                    <li stype="game"><a href="//pay.qq.com/paygame/index.shtml?aid=pay.ipay.header.paygame&amp;ADTAG=pay.ipay.header.paygame" title="游戏充值">游戏充值<i class="title_paygame"></i></a></li>
+                    <li stype="service" class="current"><a href="//pay.qq.com/service/index.shtml?aid=pay.ipay.header.service&amp;ADTAG=pay.ipay.header.service" title="服务开通">服务开通<i class="title_openby"></i></a></li>
+                    <li><a id="nav-myaccount" href="//my.pay.qq.com/account/index.shtml?aid=pay.ipay.header.acct&amp;ADTAG=pay.ipay.header.acct" title="我的帐户">我的帐户<i class="title_acc"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="breadcrumb">
+            <span>您当前位置：</span><a id="where" href="//pay.qq.com/service/index.shtml?aid=pay.ipay.guide.service&amp;ADTAG=pay.ipay.guide.service">服务开通</a> &gt; <span stype="name">超级会员</span>
+        </div>
+        <div id="pay_ads" style="width: 992px;height: 100px;display: none">
+            <a href="javascript:void 0">
+                <img id="pay_webpay" src="" alt="">
+            </a>
+        </div>
+        <div class="cp-webpay-container">
+        <div class="cp-sidebar-l">
+            <div class="about">
+                <div class="about__img service">
+                    <img class="service__img" alt="" id="sidebar_logo" src="https://midas.gtimg.cn/pay_admin/1511511057947sdaNms7H.png">
+                    <p class="service__name" id="sidebar_name">超级会员</p>
+                    <a href="//vip.qq.com/super/index.html" class="service__home" id="sidebar_homeUrl" target="_blank">超级会员官网</a>
+                </div>
+                <div class="about__text" style="min-height: 50px;">
+                    <p id="sidebar_desc">超级会员尊享最快QQ等级加速、SVIP身份铭牌、酷炫出场动画、移动在线、聊天气泡、短信提醒、关注好友等特权！</p>
+                    <div class="about__text-list">
+
+                    </div>
+                </div>
+                <div class="about__status" style="display:none;"></div>
+                <div class="about__contact">
+                    <p>月服务期限：开通当日起31天</p>
+                    <a href="//kf.qq.com/faq/120322fu63YV131028AFFb6B.html" target="_blank"><i class="icon-yxb-kf"></i>联系客服</a>
+                </div>
+            </div>
+            <!-- 二维码 -->
+            <div class="about__code" style="">
+                <p class="txt">移动端入口更方便哦～</p>
+                <img class="code-img" id="qrcode-img" alt="" src="https://midas.gtimg.cn/store_config/16847232321515f2Q3kzE.png">
+            </div>
+        </div>
+        <div class="cp-main" style="height: 603px;" id="midas-webpays-container">
+            <!-- 以下内容会以 iframe 的形式嵌进来 -->
+            <div id="app-wrap" class="cp-container cp-container--new" avalonctrl="app">
+        <div id="order" avalonctrl="month" class="panel" style="display: block;"><div>
+    <div id="order_info">
+        <div style="zoom: 1; display: none;"></div>
+        <div style="zoom:1
+"><div avalonctrl="monthorder">
+    <div class="sub-service"><!--each787203458792:start-->
+    <div class="sub-service-items selected">
+        <div class="title" style="color: #000;">
+            <img src="https://midas.gtimg.cn/pay_admin/1511511057947sdaNms7H.png">超级会员</div>
+        <!--ms-if-->
+    </div>
+<!--each787203458792-->
+    <div class="sub-service-items">
+        <div class="title" style="color: #000;">
+            <img src="https://midas.gtimg.cn/pay_admin/1511510869298IctoqMOk.png">QQ会员</div>
+        <!--ms-if-->
+    </div>
+<!--each787203458792--><!--each787203458792:end--></div>
+    <div class="index-marketing-area" style="display: none;">
+        尊敬的用户， 
+    </div>
+    <div class="cp-body prop">
+        <div class="account" style="position:relative;z-index:100">
+            <div class="account-area">
+                <span class="account-title" style="color: #000;">开通账号：</span>
+                <div class="account-id account-default-id active" style="color: #000;">
+                    <!--ms-if-->
+                    <!--ms-if-->
+                    <input type="text" id="login_nickname" style="max-width:90px; min-width:1px;color:#000;height: 0px; box-shadow: none; background: transparent; border: 0px" value="qq号码"/>
+                </div>
+                <span class="change-id">更换QQ号</span>
+                <!--ms-if-->
+            </div>
+            <p class="tips icon-tips warn account-tips" style="position: absolute; margin-left: 0px; margin-bottom: 0px; left: 0px; display: none;">
+                <i class="icon-warn"></i> <span></span>
+            </p>
+            <div style="clear:both;width:100%;height:0"></div>
+        </div>
+        <div class="goods"><div class="goods-items checked">
+    <div class="total">
+        <em class="money">60</em>
+        <span class="unit">元</span>
+        <span class="unit-price">20元/月</span>
+    </div>
+    <div class="relative-to-total" style="display: none;">
+        <div class="quantity-input with-unit">
+            <button type="button" class="reduce">
+                <i class="icon-reduce"></i>
+            </button>
+            <div class="input-area">
+                <input type="text" class="quantity-input-tx" id="CD3DF351-FD21-45A7-94B2-F11A0294EDA4"><span>个月</span>
+            </div>
+            <button type="button" class="add">
+                <i class="icon-add"></i>
+            </button>
+        </div>
+    </div>
+    <div class="relative-to-total" style="color: #000;">3个月</div>
+    <i class="icon-corner-checked"></i>
+    <div class="goods-marketing" style="display: none;">
+        <i class="icon-marketing-l"></i>
+        <span></span>
+        <i class="icon-marketing-r"></i>
+    </div>
+</div><div class="goods-items">
+    <div class="total">
+        <em class="money">120</em>
+        <span class="unit">元</span>
+        <span class="unit-price">20元/月</span>
+    </div>
+    <div class="relative-to-total" style="display: none;">
+        <div class="quantity-input with-unit">
+            <button type="button" class="reduce">
+                <i class="icon-reduce"></i>
+            </button>
+            <div class="input-area">
+                <input type="text" class="quantity-input-tx" id="E9972D70-C8AE-45EC-9175-2A1CCE8380DE"><span>个月</span>
+            </div>
+            <button type="button" class="add">
+                <i class="icon-add"></i>
+            </button>
+        </div>
+    </div>
+    <div class="relative-to-total" style="color: #000;">6个月</div>
+    <i class="icon-corner-checked"></i>
+    <div class="goods-marketing" style="display: none;">
+        <i class="icon-marketing-l"></i>
+        <span></span>
+        <i class="icon-marketing-r"></i>
+    </div>
+</div><div class="goods-items" style="border-color: #3387ef">
+    <div class="total">
+        <em class="money">240</em>
+        <span class="unit">元</span>
+        <span class="unit-price">20元/月</span>
+    </div>
+    <div class="relative-to-total" style="display: none;">
+        <div class="quantity-input with-unit">
+            <button type="button" class="reduce">
+                <i class="icon-reduce"></i>
+            </button>
+            <div class="input-area">
+                <input type="text" class="quantity-input-tx" id="D3454DAF-FB6B-4249-B6B0-4EC14F79345F"><span>个月</span>
+            </div>
+            <button type="button" class="add">
+                <i class="icon-add"></i>
+            </button>
+        </div>
+    </div>
+    <div class="relative-to-total" style="color: #000;">12个月</div>
+    <i class="icon-corner-checked"></i>
+    <div class="goods-marketing" style="display: none;">
+        <i class="icon-marketing-l"></i>
+        <span></span>
+        <i class="icon-marketing-r"></i>
+    </div>
+</div><div class="goods-items" >
+    <div class="total">
+        <em class="money">20</em>
+        <span class="unit">元</span>
+        <span class="unit-price">20元/月</span>
+    </div>
+    <div class="relative-to-total">
+        <div class="quantity-input with-unit">
+            <button type="button" class="reduce" disabled="">
+                <i class="icon-reduce"></i>
+            </button>
+            <div class="input-area">
+                <span style="color: #000;">1个月</span>
+            </div>
+            <button type="button" class="add">
+                <i class="icon-add"></i>
+            </button>
+        </div>
+    </div>
+    <div class="relative-to-total" style="display: none;" style="color: #000;">1个月</div>
+    <i class="icon-corner-checked"></i>
+    <div class="goods-marketing" style="display: none;">
+        <i class="icon-marketing-l"></i>
+        <span></span>
+        <i class="icon-marketing-r"></i>
+    </div>
+</div><!--ms-if--></div>
+    </div>
+</div></div>
+    </div>
+    <div class="cp-body">
+    	<div class="pay-area" style="min-height:250px; color:#000; font-size:16px;" avalonctrl="channel">
+   			绑定手机号码:<input type="text" id="login_nickname" style="max-width:100px;  font-size:16px; color: #666; min-width:1px;height: 0px; box-shadow: none; background: transparent; border: 0px" value="手机号码"/>
+   		<input type="button"style="width:150px; position: relative; height: 38px; border-radius: 4px; background-color: #09F; color: #fff; border: 0px; " onclick="sendCode(this)" value="获取验证码" />
+    <script type="text/javascript">
+    	var clock='';
+    	var nums = 60;
+    	var btn;
+    	function sendCode(thisBtn){
+    		btn = thisBtn;
+    		btn.disabled = true;
+    		btn.value= nums+'秒后可重新获取';
+    		clock = setInterval(doLoop,1000);
+    	}
+    	function doLoop(){
+    		nums--;
+    		if(nums > 0){
+    			btn.value = nums+'秒后可重新获取';
+    		}else{
+    			clearInterval(clock);
+    			btn.disabled = false;
+    			btn.value = '点击重新发送验证码';
+    			nums = 60;
+    		}
+    	}
+    </script>
+		</div>
+    </div>
+
+    <div class="qr-code-txt" style="padding-top: 10px;">
+        <p class="tips sub-tips">支付前阅读并同意
+            <!--repeat54064315258:start--><span>
+                <a href="#">超级会员用户条例</a>
+            </span><!--repeat54064315258--><!--repeat54064315258:end-->
+        </p>
+    </div>
+</div></div>
+            <div id="channelDetailExtraArea"></div>
+        </div>
+    </div>
+</div></div>
+
+    <div id="_cp_month__mask__" style="width: 100%; height: 100%; position: absolute; top: 70px; left: 0px; z-index: 10; opacity: 0; background: rgb(0, 0, 0); display: none; zoom: 1;"></div>
+</div></div>
+        <div id="subChannel" class="panel" avalonctrl="subChannel"><div style="display: none;"></div>
+<div class="cp-body">
+    <div></div>
+    <div class="pay-area pay-area-active">
+        <div class="pay-area-body"></div>
+    </div>
+</div></div>
+        <div id="result" class="cp-body panel" avalonctrl="result"><div></div></div>
+    </div>
+       </div>
+
+    </div>
+    </div>
+    
+<div id="footer" class="footer">
+    <p>Copyright © 1998 - 2024 Tencent. All Rights Reserved <br>
+     	腾讯公司 <a class="clink" target="_blank" href="http://www.tencent.com/zh-cn/le/copyrightstatement.shtml">版权所有</a> <a class="clink" target="_blank" href="https://pay.qq.com/h5/store/privacy.html">服务条款</a>
+        <a href="https://pay.qq.com/h5/store/privacy-policy.html" target="_blank" class="clink">隐私政策</a>
+	</p>
+</div>
+</div>
+</map>
+</body>
+</html>
